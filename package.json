@@ -29,9 +29,10 @@
     "md5-file": "^2.0.3"
   },
   "keywords": [
-    "gruntplugin",
     "md5",
     "symlink",
-    "hash"
+    "hash",
+    "generate",
+    "asset"
   ]
 }
