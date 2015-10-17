@@ -1,0 +1,37 @@
+{
+  "name": "grunt-md5assets",
+  "description": "Create symlinks by the md5 of asset files.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/p1100i/grunt-md5assets",
+  "author": {
+    "name": "peters",
+    "email": "p1100i.dev@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/p1100i/grunt-md5assets.git"
+  },
+  "bugs": {
+    "url": "https://github.com/p1100i/grunt-md5assets/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/p1100i/grunt-md5assets/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "is-there": "^4.0.0",
+    "md5-file": "^2.0.3"
+  },
+  "keywords": [
+    "gruntplugin",
+    "md5",
+    "symlink",
+    "hash"
+  ]
+}
