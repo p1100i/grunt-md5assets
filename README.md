@@ -39,13 +39,13 @@ grunt.loadNpmTasks('grunt-md5symlink');
 
 ## Options
 ### extensions
-Type: `Array`
+Type: `Array`  
 Default: `[]`
 
 Symlinks will be created for files only having on of the extensions.
 
 ### patterns
-Type: `Array`
+Type: `Array`  
 Default: `[]`
 
 Symlinks will be created for files having a substring in their path that matches a pattern.
