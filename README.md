@@ -1,31 +1,57 @@
-# grunt-md5assets
+# grunt-md5symlink
 
-> Create symlinks by the md5 of asset files.
+> Create symlink by the md5 of given files.
 
+## About
+With this grunt task, you can create symlinks with the md5 value of a given file in their name.
+
+Personally I've needed this, to allow browsers to cache served assets (.js/.css) files for long time, as the generated name changes when the content of the source file changes. To achieve this you can use the [grunt-symlinkassets][symlinkassets], however I've thought they are useful separately also.
+
+## Install
+To install as npm package and put it into your package.json:
 ```shell
-npm install grunt-md5assets --save-dev
+npm install grunt-md5symlink --save-dev
 ```
 
-Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
+To load/use it inside the Gruntfile.js:
 
 ```js
-grunt.loadNpmTasks('grunt-md5assets');
-```
+// With this config, grunt-md5symlink will iterate through all files of build/production
+// and for those having .js or .css extension, a symlink will be created. The name
+// of the symlink will be the original suffixed with the md5 of the original file and its
+// extension. E.g.: app.js => app-<md5-of-app.js>.js
 
-## The "md5assets" task
-
-### Overview
-In your project's Gruntfile, add a section named `md5assets` to the data object passed into `grunt.initConfig()`.
-
-```js
 grunt.initConfig({
-  md5assets: {
-    options: {
-      // Task-specific options go here.
+  'md5symlink' : {
+    'options' : {
+      'extensions' : ['.js', '.css']
     },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
-  },
+
+    'minified' : {
+      'src'   : 'build/production/**/*',
+      'dest'  : 'build/production'
+    }
+  }
 });
+
+grunt.loadNpmTasks('grunt-md5symlink');
 ```
+
+## Options
+### extensions
+Type: `Array`
+Default: `[]`
+
+Symlinks will be created for files only having on of the extensions.
+
+### patterns
+Type: `Array`
+Default: `[]`
+
+Symlinks will be created for files having a substring in their path that matches a pattern.
+
+## License
+[MIT License][git-LICENSE]
+
+  [git-LICENSE]: LICENSE
+  [symlinkassets]: https://github.com/p1100i/grunt-symlinkassets
