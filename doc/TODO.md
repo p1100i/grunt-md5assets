@@ -1,0 +1,1 @@
+- for files not matching it should also adds the string prefix 'skipping'
