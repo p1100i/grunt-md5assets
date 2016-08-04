@@ -2,6 +2,7 @@ var
   grunt,
   options,
   patterns,
+  hashWidth,
   extensions,
   fs      = require('fs'),
   path    = require('path'),
@@ -16,7 +17,7 @@ var
   createMD5Symlink = function createMD5Symlink(nodeInfo, nodePath) {
     var
       hash        = md5File(nodePath),
-      symlinkName = nodeInfo.base + '-' + hash + nodeInfo.ext,
+      symlinkName = nodeInfo.base + '-' + hash.substr(0, hashWidth) + nodeInfo.ext,
       symlinkPath = path.join(nodeInfo.dir, symlinkName);
 
     if (isThere(symlinkPath)) {
@@ -125,6 +126,7 @@ var
     options     = this.options();
     patterns    = options.patterns    || [];
     extensions  = options.extensions  || [];
+    hashWidth   = options.hashWidth   || 32;
 
     if (!Array.isArray(patterns) ) {
       throw new Error('PATTERN_SHOULD_BE_AN_ARRAY');
