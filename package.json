@@ -1,7 +1,7 @@
 {
   "name": "grunt-md5symlink",
   "description": "Create symlink by the md5 of given files.",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "homepage": "https://github.com/p1100i/grunt-md5symlink",
   "author": {
     "name": "peters",
