@@ -16,7 +16,7 @@ var
 
   createMD5Symlink = function createMD5Symlink(nodeInfo, nodePath) {
     var
-      hash        = md5File(nodePath),
+      hash        = md5File.sync(nodePath),
       symlinkName = nodeInfo.base + '-' + hash.substr(0, hashWidth) + nodeInfo.ext,
       symlinkPath = path.join(nodeInfo.dir, symlinkName);
 
