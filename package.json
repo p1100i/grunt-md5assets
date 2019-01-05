@@ -24,9 +24,9 @@
     "node": ">= 0.8.0"
   },
   "dependencies": {
-    "chalk": "^1.1.1",
+    "chalk": "^2.4.1",
     "is-there": "^4.0.0",
-    "md5-file": "^2.0.3"
+    "md5-file": "^4.0.0"
   },
   "keywords": [
     "md5",
